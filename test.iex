@@ -1,0 +1,210 @@
+# case {:ok, "Hello", false} do
+#   {:ok, result} -> IO.puts(result)
+#   _ -> IO.puts("catching!")
+# end
+
+# pie = 3.14
+
+# case "nice" do
+#   ^pie -> IO.puts("not tasty")
+#   pie -> IO.puts("catching!")
+# end
+
+# case {1, 2, 3} do
+#   {1, x, 3} when x > 0 ->
+#     IO.puts("ITS A MATCH!")
+#   _ ->
+#     IO.puts("NOPE")
+# end
+
+# cond do
+#   1 + 1 == 3 ->
+#     IO.puts("NOT HAPPENING")
+#   2 + 4 == 6 ->
+#     IO.puts("YEAH!!!!!")
+# end
+
+# if false, do: IO.puts("TRUE"), else: IO.puts("FALSE")
+
+# a = 0
+
+# if true do
+#   a = 1 + 2
+#   a = a + 10
+# end
+
+# IO.puts(a)
+
+# led = "Elixir is pretty cool"
+
+# ha = led |> String.split |> Enum.map(&String.upcase/1)
+
+# IO.inspect(ha)
+
+# sum = &(&1 + &2)
+
+# x = sum.(2, 3)
+
+# IO.inspect(x)
+
+# handle_result = fn 
+#   {:ok, result} -> IO.puts("Handling result... #{result}")
+#   {:error} -> IO.puts("An error has occured!")
+#   _ -> IO.puts("CAUGHT")
+# end
+
+# some_result = 1
+# handle_result.({:nah, some_result})
+
+#defmodule Speaker do
+  # def hello(name) do
+  #   IO.puts("Hello, " <> name)
+  # end
+
+  #def hello(name), do: IO.puts("Hello, " <> name)
+#end
+
+#Speaker.hello("Alex")
+
+# defmodule Speaker do
+#   # def of([_|t]) do
+#   #   IO.inspect(t)
+#   # end
+
+#   def hello(name) do
+#     IO.inspect(phrase <> name |> String.upcase)
+#   end
+
+#   defp phrase do
+#     "Hello, "
+#   end
+# end
+
+# Speaker.hello("ADASd")
+
+###
+
+# defmodule Greeter do
+#   def hello(names) when is_list(names) do
+#     names |> Enum.join(", ") |> hello
+#   end
+
+#   def hello(name) when is_binary(name) do
+#     phrase <> name
+#   end
+
+#   defp phrase do
+#     "Hello, "
+#   end
+# end
+
+# IO.inspect(Greeter.hello(["Alex", "Cool"]))
+
+###
+
+# defmodule Greeter do
+#   def hello(name, country \\ "en") do
+#     phrase(country) <> name
+#   end
+
+#   defp phrase("en") do
+#     "Hello, "
+#   end
+
+#   defp phrase("es") do
+#     "Hola, "
+#   end
+# end
+
+# IO.inspect(Greeter.hello("Alex", "es"))
+
+###
+
+# defmodule Greeter do
+#   def hello(names, country \\ "en")
+#   def hello(names, country) when is_list(names) do
+#     names |> Enum.join(", ") |> hello(country)
+#   end
+
+#   def hello(name, country) when is_binary(name) do
+#     phrase(country) <> name
+#   end
+
+#   defp phrase("en"), do: "Hello, "
+#   defp phrase("es"), do: "Hola, "
+# end
+
+# IO.inspect(Greeter.hello(["Alex", "AASDD"]))
+
+###
+
+# defmodule Example do
+#   def greeting(name) do
+#     ~s(Hello #{name}.)
+#   end
+# end
+
+# IO.inspect(Example.greeting("Alex"))
+
+###
+
+# defmodule Example.Greetings do
+#   def greeting(name) do
+#     ~s(Hello #{name}.)
+#   end
+
+#   def morning(name) do
+#     "Good morning, #{name}."
+#   end
+
+#   def evening(name) do
+#     "Good evening, #{name}."
+#   end
+# end
+
+# IO.inspect(Example.Greetings.morning("Alex"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

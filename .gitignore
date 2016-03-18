@@ -1,0 +1,5 @@
+/issues/_build
+/issues/cover
+/issues/deps
+erl_crash.dump
+*.ez
