@@ -33,7 +33,7 @@ defmodule Rumbl.VideoControllerTest do
 
   @tag login_as: "max"
   test "lists all user's videos on index", %{conn: conn, user: user} do
-    category = insert_category()
+    category = insert_category("Action")
     user_video = insert_video(user, title: "funny cats", category_id: category.id)
     other_video = insert_video(insert_user(username: "other"), title: "another video", category_id: category.id)
 

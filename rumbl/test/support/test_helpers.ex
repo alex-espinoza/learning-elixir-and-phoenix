@@ -13,8 +13,8 @@ defmodule Rumbl.TestHelpers do
     |> Repo.insert!()
   end
 
-  def insert_category() do
-    Repo.insert!(%Rumbl.Category{name: "Action"})
+  def insert_category(name) do
+    Repo.insert!(%Rumbl.Category{name: name})
   end
 
   def insert_video(user, attrs \\ %{}) do
