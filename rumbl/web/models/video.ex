@@ -1,6 +1,8 @@
 defmodule Rumbl.Video do
   use Rumbl.Web, :model
 
+  @primary_key {:id, Rumbl.Permalink, autogenerate: true}
+
   schema "videos" do
     field :url, :string
     field :title, :string
@@ -39,6 +41,12 @@ defmodule Rumbl.Video do
   defp slugify(title) do
     title
     |> String.downcase()
-    |> String.replace(~r/[^`w-]+/, "-")
+    |> String.replace(~r/[^\w-]+/, "-")
+  end
+
+  defimpl Phoenix.Param, for: Rumbl.Video do
+    def to_param(%{slug: slug, id: id}) do
+      "#{id}-#{slug}"
+    end
   end
 end
